@@ -1,5 +1,5 @@
 resource "aws_lb_target_group" "application" {
-  name        = "${lower(substr(local.name, 0, 32))}"
+  name        = "${length(local.name) > 32 ? lower(substr(local.name, 0, 32)) : lower(local.name)}"
   port        = "${var.port}"
   protocol    = "HTTP"
   target_type = "instance"
