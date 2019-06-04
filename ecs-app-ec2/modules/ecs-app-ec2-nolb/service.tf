@@ -14,12 +14,11 @@ resource "aws_ecs_service" "application" {
   deployment_minimum_healthy_percent = "${var.min_healthy}"
   scheduling_strategy                = "${var.scheduling_strategy}"
 
-  ordered_placement_strategy {
-    field = "instanceId"
-    type  = "spread"
-  }
+  # ordered_placement_strategy {
+  #   field = "instanceId"
+  #   type  = "spread"
+  # }
 
   depends_on = ["aws_iam_role.ecs_task_execution"]
-
   tags = "${var.tags}"
 }
