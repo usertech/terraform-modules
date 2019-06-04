@@ -25,13 +25,6 @@ module "container_definition" {
     },
   ]
 
-  healthcheck = {
-    command     = ["${var.container_healthcheck_command}"]
-    interval    = "${var.container_healthcheck_interval}"
-    retries     = "${var.container_healthcheck_retries}"
-    startPeriod = "${var.container_healthcheck_startPeriod}"
-  }
-
   environment = ["${var.environment}"]
   secrets     = ["${var.secrets}"]
 }
