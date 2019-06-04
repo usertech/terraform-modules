@@ -26,10 +26,10 @@ module "container_definition" {
   ]
 
   healthcheck = {
-    command     = "echo"
-    interval    = 30
-    retries     = 3
-    startPeriod = 60
+    command     = ["${var.container_healthcheck_command}"]
+    interval    = "${var.container_healthcheck_interval}"
+    retries     = "${var.container_healthcheck_retries}"
+    startPeriod = "${var.container_healthcheck_startPeriod}"
   }
 
   environment = ["${var.environment}"]
