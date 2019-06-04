@@ -14,10 +14,6 @@ variable "name" {
   description = "name of this specific service"
 }
 
-variable "url" {
-  description = "url for the alb listener"
-}
-
 variable "vpc_id" {
   description = "vpc id - used in target group, security group etc"
 }
@@ -137,4 +133,20 @@ variable "healthcheck_grace" {
 
 variable "scheduling_strategy" {
   default = "REPLICA"
+}
+
+variable "container_healthcheck_command" {
+  default = "echo"
+}
+
+variable "container_healthcheck_retries" {
+  default = 5
+}
+
+variable "container_healthcheck_startPeriod" {
+  default = 60
+}
+
+variable "container_healthcheck_interval" {
+  default = 30
 }
