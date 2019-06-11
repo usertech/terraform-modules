@@ -20,5 +20,5 @@ resource "aws_ecs_service" "application" {
   # }
 
   depends_on = ["aws_iam_role.ecs_task_execution"]
-  tags = "${var.tags}"
+  tags       = "${var.tags}"
 }
