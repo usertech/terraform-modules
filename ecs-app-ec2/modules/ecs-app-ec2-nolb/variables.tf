@@ -136,7 +136,8 @@ variable "scheduling_strategy" {
 }
 
 variable "container_healthcheck_command" {
-  default = "echo"
+  type = list
+  default = ["CMD-SHELL", "echo"]
 }
 
 variable "container_healthcheck_retries" {
