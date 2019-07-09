@@ -151,3 +151,7 @@ variable "container_healthcheck_startPeriod" {
 variable "container_healthcheck_interval" {
   default = 30
 }
+
+variable "container_healthcheck_timeout" {
+  default = 5
+}

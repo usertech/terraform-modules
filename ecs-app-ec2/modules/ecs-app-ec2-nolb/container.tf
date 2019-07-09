@@ -30,6 +30,7 @@ module "container_definition" {
     interval    = "${var.container_healthcheck_interval}"
     retries     = "${var.container_healthcheck_retries}"
     startPeriod = "${var.container_healthcheck_startPeriod}"
+    timeout     = "${var.container_healthcheck_timeout}"
   }
 
   environment = ["${var.environment}"]
