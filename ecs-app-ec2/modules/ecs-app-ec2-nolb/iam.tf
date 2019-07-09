@@ -1,7 +1,7 @@
 # task execution role
 
 resource "aws_iam_role" "ecs_task_execution" {
-  name = "${local.name_underscore}_ecs_task_execution_role"
+  name = ${replace("${local.name_underscore}_ecs_task_execution_role", "/(.{0,63})(.*)/", "$1")}
 
   assume_role_policy = <<EOF
 {
